@@ -3,17 +3,17 @@ TP Python - 25/10/2023 - Gestionnaire de tâches. VAMBRE Maxime.
 
 1] Importation de modules
 
-" 
+```python 
 import tkinter as tk
 import os
 import json
+```
 
-"
 importation des modules nécessaires : tkinter pour l'interface utilisateur, os pour gérer les fichiers et répertoires, et json pour enregistrer les tâches depuis un fichier JSON.
 
 2] Enregistrement des tâches
 
-"
+```python
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.join(script_dir, "enregistrement_taches.json")
 
@@ -28,7 +28,8 @@ try:
         taches = json.load(file)
 except (FileNotFoundError, json.JSONDecodeError):
     pass
-"
+```
+
 Détermine le chemin du fichier JSON ("enregistrement_taches.json") en fonction de l'emplacement du script.
 
 3] Ajout d'une tâche
@@ -49,8 +50,7 @@ La fonction 'afficher_liste_taches()' est appelée lorsque l'utilisateur utilise
 
 7] Entrées 
 
-" 
-
+```python
 nom_label = tk.Label(fenetre, text="Nom de la tâche:")
 nom_entry = tk.Entry(fenetre)
 
@@ -59,14 +59,13 @@ description_entry = tk.Entry(fenetre)
 
 date_echeance_label = tk.Label(fenetre, text="Date d'échéance:")
 date_echeance_entry = tk.Entry(fenetre)
-
-"
+```
 
 Permet de creer des étiquettes 'Labels' et des champs de texte pour entrer le nom, la description et la date d'échéance .
 
 8] Boutons
 
-"
+
 ```python
 ajouter_bouton = tk.Button(fenetre, text="Ajouter", command=ajouter_tache)
 ajouter_bouton.pack()
@@ -83,5 +82,5 @@ marquer_bouton.pack()
 afficher_bouton = tk.Button(fenetre, text="Afficher la liste des tâches", command=afficher_liste_taches)
 afficher_bouton.pack()
 ```
-"
+
 Boutons qui permettent à l'utilisateur d'interagir avec le gestionnaire de tâches, les fonctions 'command' sont associées à des actions comme l'ajout, la suppression, la marquage comme terminée et l'affichage des tâches.
